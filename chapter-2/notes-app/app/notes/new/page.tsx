@@ -1,4 +1,4 @@
-import { createNote } from "../../actions/notes"
+import { createNote } from '../../actions/notes'
 
 const NewNote = () => {
   return (
@@ -8,7 +8,7 @@ const NewNote = () => {
         <div>
           <label>
             Content
-            <input type="text" name="content" required/>
+            <input type="text" name="content" required />
           </label>
         </div>
         <div>
