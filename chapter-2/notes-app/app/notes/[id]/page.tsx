@@ -15,8 +15,8 @@ const NotePage = async ({ params }: { params: Promise<{ id: string }> }) => {
       <h2>{note.content}</h2>
       <p>{note.important ? 'Important' : 'Not important'}</p>
       <form action={toggleNoteImportance}>
-        <input type='hidden' name='id' value={note.id} />
-        <button type='submit'>
+        <input type="hidden" name="id" value={note.id} />
+        <button type="submit">
           {note.important ? 'Mark as not important' : 'Mark as important'}
         </button>
       </form>
