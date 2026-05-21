@@ -1,4 +1,4 @@
-import { addBlogAction } from "../../actions/add-blog"
+import { addBlogAction } from "../../actions/blogs"
 
 const NewBlog = () => {
   return (
