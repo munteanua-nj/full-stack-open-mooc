@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { getBlogs } from '../services/blogs'
 
 const Blogs = () => {
-  const blogs = getBlogs()
+  const sortedByLikes = [...getBlogs()].sort((a, b) => b.likes - a.likes)
   return (
     <table>
       <thead>
@@ -15,7 +15,7 @@ const Blogs = () => {
         </tr>
       </thead>
       <tbody>
-        {blogs.map((blog) => (
+        {sortedByLikes.map((blog) => (
           <tr key={blog.id}>
             <td><Link href={`/blogs/${blog.id}`}>{blog.id}</Link></td>
             <td><Link href={`/blogs/${blog.id}`}>{blog.title}</Link></td>
