@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { getNotes } from "../services/notes"
+import Link from 'next/link'
+import { getNotes } from '../services/notes'
 
 const Notes = async ({
   searchParams,
@@ -7,8 +7,8 @@ const Notes = async ({
   searchParams: Promise<{ important?: string }>
 }) => {
   const { important } = await searchParams
-  const showImportant = important === "true"
-  const allNotes = getNotes()
+  const showImportant = important === 'true'
+  const allNotes = await getNotes(showImportant)
   const notes = showImportant
     ? allNotes.filter((note) => note.important)
     : allNotes
@@ -17,8 +17,8 @@ const Notes = async ({
     <div>
       <h2>Notes</h2>
       <div>
-        <Link href={showImportant ? "/notes" : "/notes?important=true"}>
-          {showImportant ? "show all" : "show important only"}
+        <Link href={showImportant ? '/notes' : '/notes?important=true'}>
+          {showImportant ? 'show all' : 'show important only'}
         </Link>
       </div>
       <ul>
