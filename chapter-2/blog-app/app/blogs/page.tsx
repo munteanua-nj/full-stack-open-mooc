@@ -8,7 +8,8 @@ const Blogs = async ({
   searchParams: Promise<{ filter?: string }>
 }) => {
   const { filter } = await searchParams
-  const sortedByLikes = [...getBlogs(filter)].sort((a, b) => b.likes - a.likes)
+  const blogs = await getBlogs(filter)
+  const sortedByLikes = blogs.sort((a, b) => b.likes - a.likes)
   return (
     <div>
       <form action={filterAction}>
