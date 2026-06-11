@@ -15,6 +15,13 @@
       "when": 1781134049699,
       "tag": "0001_rich_wither",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1781135764274,
+      "tag": "0002_unique_cobalt_man",
+      "breakpoints": true
     }
   ]
 }
