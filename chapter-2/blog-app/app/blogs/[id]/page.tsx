@@ -1,5 +1,8 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import likeIcon from '@/assets/icons/like-icon.png'
+import { likeBlogAction } from '../../actions/blogs'
 import { getBlogById } from '../../services/blogs'
 
 const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
@@ -16,6 +19,13 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
       <h3>{blog.author}</h3>
       <Link href={blog.url}>{blog.url}</Link>
       <div>Likes: {blog.likes}</div>
+      <form action={likeBlogAction}>
+        <input type='hidden' name='id' value={id} />
+        Like ---&gt;
+        <button type='submit'>
+          <Image src={likeIcon} alt='LikeIcon' width={20} height={20} />
+        </button>
+      </form>
     </div>
   )
 }
