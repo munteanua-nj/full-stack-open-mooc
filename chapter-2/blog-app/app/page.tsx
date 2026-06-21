@@ -7,5 +7,5 @@ export default function Home() {
         </a>)
       </h2>
     </div>
-  );
+  )
 }
