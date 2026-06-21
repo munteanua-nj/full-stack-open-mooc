@@ -6,10 +6,14 @@ const blogs = [
 
 let nextId = 4
 
+export const addBlog = (title: string, author: string, url: string, likes: number) => {
+  blogs.push({ id: nextId++, title, author, url, likes })
+}
+
 export const getBlogs = () => {
   return blogs
 }
 
-export const addBlog = (title: string, author: string, url: string, likes: number) => {
-  blogs.push({ id: nextId++, title, author, url, likes })
+export const getBlogById = (id: number) => {
+  return blogs.find((blog) => blog.id === id)
 }

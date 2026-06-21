@@ -1,5 +1,6 @@
-import { getBlogs } from '../services/blogs'
+import Link from 'next/link'
 import './blogs.css'
+import { getBlogs } from '../services/blogs'
 
 const Blogs = () => {
   const blogs = getBlogs()
@@ -20,7 +21,7 @@ const Blogs = () => {
           {blogs.map(blog => (
             <tr key={blog.id}>
               <td>{blog.id}</td>
-              <td>{blog.title}</td>
+              <td><Link href={`/blogs/${blog.id}`}>{blog.title}</Link></td>
               <td>{blog.author}</td>
               <td>{blog.url}</td>
               <td>{blog.likes}</td>
