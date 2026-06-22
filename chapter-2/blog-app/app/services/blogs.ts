@@ -18,8 +18,14 @@ export const addBlog = (title: string, author: string, url: string, likes: numbe
   blogs.push({ id: nextId++, title, author, url, likes })
 }
 
-export const getBlogs = (): Blog[] => {
-  return [...blogs].sort((a, b) => b.likes - a.likes)
+export const getBlogs = (searchTerm?: string): Blog[] => {
+  var result: Blog[]
+  if (searchTerm) {
+    result = blogs.filter((blog) => blog.title.indexOf(searchTerm) != -1)
+  } else {
+    result = [...blogs]
+  }
+  return result.sort((a, b) => b.likes - a.likes)
 }
 
 export const getBlogById = (id: number): Blog | undefined => {

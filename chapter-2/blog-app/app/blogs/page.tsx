@@ -2,12 +2,26 @@ import Link from 'next/link'
 import './blogs.css'
 import { getBlogs } from '../services/blogs'
 
-const Blogs = () => {
-  const blogs = getBlogs()
+const Blogs = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ filter?: string }>
+}) => {
+  const { filter } = await searchParams
+
+  const blogs = getBlogs(filter)
   return (
     <div>
       <h2>Blogs</h2>
-      <table>
+      <form>
+        <label>
+          Filter:&nbsp;
+         <input type='text' name='filter' />
+           &nbsp;
+         <button type='submit'>Ok</button>
+        </label>
+      </form>
+      <table style={{marginTop: '20px'}}>
         <thead>
           <tr>
             <th>Id</th>
