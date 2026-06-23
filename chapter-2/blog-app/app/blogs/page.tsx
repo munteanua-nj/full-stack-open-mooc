@@ -9,7 +9,7 @@ const Blogs = async ({
 }) => {
   const { filter } = await searchParams
 
-  const blogs = getBlogs(filter)
+  const blogs = await getBlogs(filter)
   return (
     <div>
       <h2>Blogs</h2>

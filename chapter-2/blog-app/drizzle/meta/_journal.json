@@ -8,6 +8,13 @@
       "when": 1782184881142,
       "tag": "0000_conscious_norman_osborn",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1782186184630,
+      "tag": "0001_awesome_stardust",
+      "breakpoints": true
     }
   ]
 }
