@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1782184881142,
-      "tag": "0000_conscious_norman_osborn",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1782186184630,
-      "tag": "0001_awesome_stardust",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1782232079575,
-      "tag": "0002_dry_marvel_boy",
+      "when": 1782232709225,
+      "tag": "0000_giant_roulette",
       "breakpoints": true
     }
   ]
