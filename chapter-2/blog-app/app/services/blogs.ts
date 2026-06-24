@@ -11,7 +11,15 @@ interface Blog {
 }
 
 export const addBlog = async (title: string, author: string, url: string, likes: number) => {
-  await db.insert(blogs).values({ title, author, url, likes })
+  const user = await db.query.users.findFirst({
+    orderBy: sql`RANDOM()`,
+  })
+
+  if (user) {
+    await db.insert(blogs).values({ title, author, url, likes, userId: user.id })
+  } else {
+    console.error('Failed to add blog. Failed to assign user to new blog.')
+  }
 }
 
 export const getBlogs = async (searchTerm?: string): Promise<Blog[]> => {
