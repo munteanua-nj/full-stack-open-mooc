@@ -8,7 +8,7 @@ const UsersPage = async () => {
     <div>
       <ul>
         {users.map((user: User) => (
-          <li key={user.id}><Link href={`/users/${user.id}`}>{user.name}</Link></li>
+          <li key={user.id}><Link href={`/users/${user.username}`}>{user.name}</Link></li>
         ))}
       </ul>
     </div>

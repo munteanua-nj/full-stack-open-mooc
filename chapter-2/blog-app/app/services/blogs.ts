@@ -2,7 +2,7 @@ import { eq, sql } from 'drizzle-orm'
 import { db } from '../../db'
 import { blogs } from '../../db/schema'
 
-interface Blog {
+export interface Blog {
   id: number;
   title: string;
   author: string;
