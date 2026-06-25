@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { User, getUsers } from '../services/users'
 
 const UsersPage = async () => {
@@ -7,7 +8,7 @@ const UsersPage = async () => {
     <div>
       <ul>
         {users.map((user: User) => (
-          <li key={user.id}>{user.name}</li>
+          <li key={user.id}><Link href={`/users/${user.id}`}>{user.name}</Link></li>
         ))}
       </ul>
     </div>
