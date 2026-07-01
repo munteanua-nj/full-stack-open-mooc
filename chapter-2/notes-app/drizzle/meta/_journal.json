@@ -8,6 +8,13 @@
       "when": 1781296755473,
       "tag": "0000_colossal_princess_powerful",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1782425123616,
+      "tag": "0001_blushing_gertrude_yorkes",
+      "breakpoints": true
     }
   ]
 }
